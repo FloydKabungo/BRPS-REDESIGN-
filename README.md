@@ -1,10 +1,20 @@
 # Blouberg Ridge Primary School redesign concept
 
-A responsive, one-page front-end concept created from the public content on brps.org.za.
+A responsive multi-page front-end redesign based on the school’s public website and supplied media.
 
-## Open
+## Pages
 
-Open `index.html` directly in a browser, or run a local server:
+- `index.html` — homepage and About section
+- `learning.html` — academics and learning phases
+- `sport-culture.html` — sport and cultural activities
+- `staff.html` — searchable staff directory
+- `parents.html` — parent platforms, uniforms, documents and gallery
+- `contact.html` — contact details and directions
+- `admissions.html` — applications, fees, policies and Open Day video
+
+## Open locally
+
+Open `index.html` directly in a browser, or run a local server from the project folder:
 
 ```bash
 python -m http.server 8000
@@ -12,22 +22,16 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Main assets
+
+- `assets/brps-badge.png` — school badge
+- `teachers/pic 1.png` — headmaster portrait
+- `teachers/governing-body/` — governing body portraits
+- `assets/sport-culture/` — sport and culture imagery
+- `assets/parents/` — parent platform and gallery imagery
+- `assets/videos/open-day-2025.mp4` — Admissions Open Day video
+
 ## Notes
 
-- The concept uses remote school image URLs with designed gradient fallbacks.
-- Replace placeholder news and portrait visuals with approved current school media before launch.
-- External admissions and parent-service links should be checked by the school before production deployment.
-
-
-## Added assets
-- `teachers/pic 1.png` — headmaster portrait
-- `teachers/governing-body/` — cropped governing body portraits
-
-## Learning page
-Open `learning.html` for the dedicated responsive learning and curriculum page.
-
-## Sport & culture page
-Open `sport-culture.html` for the dedicated responsive activities page. The supplied school imagery has been cropped into local assets under `assets/sport-culture/`.
-
-## For parents page
-Open `parents.html` for parent platforms, official uniform PDFs, past papers, policy documents and the cropped photo gallery. Supporting images are stored under `assets/parents/`.
+- Staff portraits not already supplied locally are loaded from the school’s official public media library and include initials fallbacks.
+- Confirm all contact details, staff listings, dates, fees and external links with the school before production launch.
