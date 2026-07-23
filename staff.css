@@ -110,3 +110,181 @@
   .staff-card { max-width: 410px; width: 100%; margin-inline: auto; }
   .staff-card__body { min-height: 140px; }
 }
+
+/* =========================================================
+   Staff hero redesign — school/team illustration
+   ========================================================= */
+.staff-hero {
+  min-height: 650px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(141,213,247,.28) 0 17%, transparent 17.2%),
+    linear-gradient(130deg, #f9fdff 0%, #edf9fe 54%, #dff3fb 100%);
+}
+
+.staff-hero::after {
+  height: 74px;
+  background: linear-gradient(176deg, transparent 0 48%, rgba(255,255,255,.76) 49% 67%, var(--white) 68%);
+}
+
+.staff-hero__shape--one {
+  width: 520px;
+  height: 520px;
+  right: -185px;
+  top: -230px;
+  background: rgba(141,213,247,.18);
+}
+
+.staff-hero__shape--two {
+  width: 220px;
+  height: 220px;
+  left: -105px;
+  bottom: -70px;
+  border-width: 42px;
+}
+
+.staff-hero__grid {
+  min-height: 650px;
+  grid-template-columns: .91fr 1.09fr;
+  gap: clamp(28px, 4.4vw, 66px);
+  padding: 54px 0 92px;
+}
+
+.staff-hero__copy {
+  position: relative;
+  z-index: 3;
+}
+
+.staff-hero h1 {
+  max-width: 590px;
+  font-size: clamp(55px, 5.45vw, 78px);
+  line-height: .98;
+  letter-spacing: -.052em;
+}
+
+.staff-hero__copy > p:not(.eyebrow) {
+  max-width: 590px;
+  margin-top: 25px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.staff-hero__actions {
+  margin-top: 31px;
+}
+
+.staff-hero__facts {
+  max-width: 650px;
+  gap: clamp(18px, 2.3vw, 34px);
+  margin-top: 34px;
+  padding-top: 22px;
+}
+
+.staff-hero__facts strong {
+  font-size: 19px;
+}
+
+.staff-hero__visual {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.staff-hero__visual::before {
+  content: "";
+  position: absolute;
+  width: 78%;
+  height: 28%;
+  left: 12%;
+  bottom: 4%;
+  border-radius: 50%;
+  background: rgba(6,42,82,.12);
+  filter: blur(34px);
+  transform: scaleX(.94);
+  z-index: -1;
+}
+
+.staff-hero__illustration {
+  width: min(124%, 760px);
+  max-width: none;
+  height: auto;
+  margin-left: -8%;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 34px rgba(6,42,82,.10));
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+
+@media (max-width: 1050px) {
+  .staff-hero__grid {
+    grid-template-columns: .95fr 1.05fr;
+    gap: 24px;
+  }
+
+  .staff-hero__visual {
+    min-height: 470px;
+    transform: none;
+  }
+
+  .staff-hero__illustration {
+    width: 126%;
+    margin-left: -10%;
+  }
+}
+
+@media (max-width: 800px) {
+  .staff-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 58px 0 92px;
+  }
+
+  .staff-hero__visual {
+    width: min(100%, 690px);
+    min-height: auto;
+    margin: 0 auto;
+  }
+
+  .staff-hero__illustration {
+    width: 112%;
+    margin-left: -6%;
+  }
+
+  .staff-hero__visual::before {
+    width: 70%;
+    left: 15%;
+    bottom: 2%;
+  }
+}
+
+@media (max-width: 560px) {
+  .staff-hero {
+    min-height: auto;
+  }
+
+  .staff-hero h1 {
+    font-size: clamp(43px, 12vw, 53px);
+  }
+
+  .staff-hero__copy > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
+  .staff-hero__facts {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    text-align: center;
+  }
+
+  .staff-hero__facts div {
+    align-items: center;
+  }
+
+  .staff-hero__illustration {
+    width: 122%;
+    margin-left: -11%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+  }
+}

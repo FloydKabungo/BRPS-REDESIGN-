@@ -328,3 +328,243 @@ button, input { font: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Homepage sponsors */
+.sponsors {
+  position: relative;
+  overflow: hidden;
+  padding-top: 86px;
+  padding-bottom: 96px;
+  background: var(--white);
+}
+.sponsors::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -190px;
+  top: -190px;
+  border-radius: 50%;
+  border: 52px solid rgba(141,213,247,.12);
+  pointer-events: none;
+}
+.sponsors__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+.sponsor-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(6,42,82,.07);
+  transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+.sponsor-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(23,108,169,.28);
+  box-shadow: 0 24px 48px rgba(6,42,82,.13);
+}
+.sponsor-card__image {
+  aspect-ratio: 1.74 / 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #eef5f8;
+}
+.sponsor-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .28s ease;
+}
+.sponsor-card:hover .sponsor-card__image img { transform: scale(1.025); }
+.sponsor-card__meta {
+  min-height: 98px;
+  padding: 17px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sponsor-card__meta strong {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.2;
+}
+.sponsor-card__meta span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+.sponsor-card__meta b {
+  color: var(--blue);
+  font-size: 14px;
+}
+
+/* Homepage school song */
+.school-song {
+  position: relative;
+  overflow: hidden;
+  padding: 82px 0;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 83% 12%, rgba(141,213,247,.22), transparent 28%),
+    linear-gradient(125deg, var(--navy-deep) 0%, #073d6b 58%, #0d659b 100%);
+}
+.school-song::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .16;
+  background-image: radial-gradient(rgba(255,255,255,.34) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, #000, transparent 86%);
+}
+.school-song::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  left: -170px;
+  bottom: -245px;
+  border-radius: 50%;
+  border: 58px solid rgba(245,198,66,.1);
+}
+.school-song__grid {
+  position: relative;
+  z-index: 2;
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .62fr);
+  gap: clamp(54px, 7vw, 104px);
+  align-items: center;
+}
+.school-song__copy h2 {
+  max-width: 680px;
+  margin: 12px 0 24px;
+  color: var(--white);
+  font-size: clamp(46px, 5vw, 68px);
+  line-height: 1.03;
+}
+.school-song__copy h2 em { color: var(--yellow); }
+.school-song__copy > p:not(.eyebrow) {
+  max-width: 630px;
+  margin: 0;
+  color: #c9dce8;
+  font-size: 17px;
+  line-height: 1.82;
+}
+.school-song__details {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 31px 0 13px;
+}
+.school-song__details div {
+  min-width: 175px;
+  padding: 15px 18px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  background: rgba(255,255,255,.075);
+  box-shadow: inset 0 1px rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+}
+.school-song__details span {
+  color: #91bed7;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.school-song__details strong {
+  margin-top: 3px;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+}
+.school-song__card {
+  position: relative;
+  width: min(100%, 365px);
+  margin: 0 auto;
+  padding: 12px 12px 15px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 29px;
+  background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.09));
+  box-shadow: 0 32px 70px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.15);
+  backdrop-filter: blur(14px);
+}
+.school-song__card::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 23px;
+}
+.school-song__image-wrap {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eaf7fd;
+  box-shadow: 0 16px 34px rgba(0,0,0,.18);
+}
+.school-song__image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+.school-song__card figcaption {
+  position: relative;
+  z-index: 1;
+  padding: 13px 8px 0;
+  color: #d6e8f2;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 1050px) {
+  .sponsors__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .school-song__grid { grid-template-columns: minmax(0, 1fr) minmax(290px, .62fr); gap: 50px; }
+}
+
+@media (max-width: 800px) {
+  .sponsors { padding-top: 74px; padding-bottom: 78px; }
+  .sponsors__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .school-song { padding: 74px 0; }
+  .school-song__grid { min-height: 0; grid-template-columns: 1fr; gap: 50px; }
+  .school-song__copy { text-align: center; }
+  .school-song__copy .eyebrow { justify-content: center; }
+  .school-song__copy > p:not(.eyebrow) { margin-inline: auto; }
+  .school-song__details { justify-content: center; }
+  .school-song__card { width: min(100%, 380px); }
+}
+
+@media (max-width: 560px) {
+  .sponsors__grid { grid-template-columns: 1fr; }
+  .sponsor-card { display: grid; grid-template-columns: 145px 1fr; }
+  .sponsor-card__image { aspect-ratio: auto; min-height: 118px; }
+  .sponsor-card__meta { min-height: 118px; padding: 18px; }
+  .school-song__copy h2 { font-size: 42px; }
+  .school-song__details { display: grid; grid-template-columns: 1fr 1fr; }
+  .school-song__details div { min-width: 0; }
+  .school-song { padding: 64px 0; }
+  .school-song__card { width: min(100%, 340px); padding: 9px 9px 13px; border-radius: 24px; }
+  .school-song__image-wrap { border-radius: 17px; }
+}
