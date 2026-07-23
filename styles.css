@@ -568,3 +568,567 @@ button, input { font: inherit; }
   .school-song__card { width: min(100%, 340px); padding: 9px 9px 13px; border-radius: 24px; }
   .school-song__image-wrap { border-radius: 17px; }
 }
+
+/* =========================================================
+   Homepage layout repairs: hero artwork, heritage and SGB
+   ========================================================= */
+
+/* New right-hand visual for the homepage/About hero */
+.hero__identity {
+  min-height: 540px;
+  isolation: isolate;
+}
+.ridge-showcase {
+  position: absolute;
+  inset: 20px 42px 35px 32px;
+  overflow: hidden;
+  border: 8px solid rgba(255,255,255,.84);
+  border-radius: 190px 190px 36px 36px;
+  background: linear-gradient(155deg, #78c9ed, #176ca9 55%, #062a52);
+  box-shadow: 0 28px 70px rgba(6,42,82,.24);
+}
+.ridge-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(3,29,57,.36), transparent 48%), radial-gradient(circle at 22% 13%, rgba(255,255,255,.35), transparent 27%);
+}
+.ridge-showcase__sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #78ccef 0%, #dff4fd 60%, #91d2ec 100%);
+}
+.ridge-showcase__sun {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  right: 62px;
+  top: 58px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 20px rgba(245,198,66,.12);
+}
+.ridge-showcase__mountain {
+  position: absolute;
+  z-index: 1;
+  left: -7%;
+  right: -7%;
+  bottom: 132px;
+  width: 114%;
+  height: 215px;
+  fill: #0a4f7f;
+  filter: drop-shadow(0 -10px 28px rgba(6,42,82,.12));
+}
+.ridge-showcase__wave {
+  position: absolute;
+  z-index: 2;
+  left: -10%;
+  width: 120%;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-3deg);
+}
+.ridge-showcase__wave--one {
+  height: 150px;
+  bottom: 15px;
+  background: #dff5fd;
+}
+.ridge-showcase__wave--two {
+  height: 105px;
+  bottom: -18px;
+  background: linear-gradient(180deg, #2f91c5, #075080);
+  transform: rotate(3deg);
+}
+.ridge-showcase__crest {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 46%;
+  width: 225px;
+  padding: 24px 20px 20px;
+  border: 1px solid rgba(255,255,255,.56);
+  border-radius: 28px;
+  background: rgba(255,255,255,.91);
+  color: var(--navy);
+  text-align: center;
+  box-shadow: 0 24px 55px rgba(3,29,57,.2);
+  transform: translate(-50%,-50%);
+  backdrop-filter: blur(12px);
+}
+.ridge-showcase__crest-ring {
+  width: 108px;
+  height: 108px;
+  margin: -64px auto 14px;
+  padding: 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--white);
+  border: 6px solid rgba(141,213,247,.45);
+  box-shadow: 0 13px 28px rgba(6,42,82,.16);
+}
+.ridge-showcase__crest-ring img {
+  width: 74px;
+  max-height: 84px;
+  object-fit: contain;
+}
+.ridge-showcase__crest > span {
+  display: block;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.ridge-showcase__crest > strong {
+  display: block;
+  margin-top: 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.15;
+}
+.ridge-showcase__community {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 31px;
+  width: 270px;
+  height: 100px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 11px;
+  transform: translateX(-50%);
+}
+.ridge-showcase__community span {
+  position: relative;
+  width: 43px;
+  height: 64px;
+  border-radius: 22px 22px 10px 10px;
+  background: #fff;
+  box-shadow: 0 13px 26px rgba(3,29,57,.16);
+}
+.ridge-showcase__community span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%);
+}
+.ridge-showcase__community span:nth-child(2),
+.ridge-showcase__community span:nth-child(4) { height: 76px; background: #f5c642; }
+.ridge-showcase__community span:nth-child(3) { height: 86px; width: 48px; background: #082e59; }
+.ridge-showcase__community span:nth-child(1),
+.ridge-showcase__community span:nth-child(5) { background: #8dd5f7; }
+.hero-float {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(255,255,255,.72);
+  background: rgba(255,255,255,.94);
+  color: var(--navy);
+  box-shadow: 0 18px 42px rgba(2,35,67,.16);
+  backdrop-filter: blur(12px);
+}
+.hero-float--since {
+  top: 54px;
+  right: 2px;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  text-align: center;
+  background: var(--yellow);
+  border-width: 7px;
+}
+.hero-float--since span {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.hero-float--since strong {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1.05;
+}
+.hero-float--community {
+  left: -18px;
+  bottom: 56px;
+  min-width: 195px;
+  padding: 15px 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 18px;
+}
+.hero-float--community svg {
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--sky-pale);
+  fill: var(--blue);
+}
+.hero-float--community span,
+.hero-float--motto small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.hero-float--community strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+.hero-float--motto {
+  right: 9px;
+  bottom: 4px;
+  width: 220px;
+  padding: 17px 19px;
+  border-radius: 18px;
+}
+.hero-float--motto > span {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.hero-float--motto small {
+  margin-top: 3px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Who we are / heritage section */
+.heritage {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f5fbfe 0%, #edf7fb 100%);
+}
+.heritage::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: -245px;
+  top: 140px;
+  border-radius: 50%;
+  border: 62px solid rgba(141,213,247,.13);
+}
+.heritage__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.heritage-card {
+  position: relative;
+  min-width: 0;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(6,42,82,.1);
+  border-radius: 28px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 18px 45px rgba(6,42,82,.08);
+}
+.heritage-card h3 {
+  margin: 8px 0 14px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  line-height: 1.2;
+}
+.heritage-card p { color: var(--muted); }
+.card-kicker {
+  margin: 0;
+  color: var(--blue) !important;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.heritage-card--story { grid-column: span 7; }
+.heritage-card--mission {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+  background: linear-gradient(145deg, var(--navy), #0a5e93);
+}
+.heritage-card--mission .card-kicker { color: var(--sky) !important; }
+.heritage-card--mission blockquote {
+  position: relative;
+  z-index: 2;
+  margin: 20px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.35;
+}
+.mission-mark {
+  position: absolute;
+  right: 26px;
+  top: -28px;
+  color: rgba(255,255,255,.1);
+  font-family: Georgia, serif;
+  font-size: 180px;
+  line-height: 1;
+}
+.heritage-card--badge {
+  grid-column: span 7;
+  display: grid;
+  grid-template-columns: 150px minmax(0,1fr);
+  gap: 28px;
+  align-items: center;
+}
+.badge-feature {
+  min-height: 190px;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #eaf8fe, #d2edf8);
+}
+.badge-feature img {
+  width: 112px;
+  max-height: 145px;
+  object-fit: contain;
+  filter: drop-shadow(0 13px 14px rgba(6,42,82,.16));
+}
+.school-spirit {
+  margin-top: 19px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--navy) !important;
+  font-weight: 750;
+}
+.heritage-card--campus {
+  grid-column: span 5;
+  display: grid;
+  grid-template-columns: 78px minmax(0,1fr);
+  gap: 23px;
+  align-items: start;
+}
+.campus-icon {
+  width: 70px;
+  height: 70px;
+  padding: 17px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: var(--yellow);
+  box-shadow: 0 13px 28px rgba(245,198,66,.24);
+}
+.campus-icon svg { fill: var(--navy); }
+.heritage-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+.heritage-timeline div {
+  min-width: 0;
+  padding: 15px;
+  border-radius: 17px;
+  background: #f3f9fc;
+}
+.heritage-timeline strong {
+  display: block;
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+.heritage-timeline span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.school-values {
+  position: relative;
+  z-index: 1;
+  margin-top: 26px;
+  padding: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(6,42,82,.09);
+  border-radius: 22px;
+  background: rgba(255,255,255,.72);
+}
+.school-values span {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 7px 18px rgba(6,42,82,.07);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+/* Governing Body: consistent image sizes and a true responsive grid */
+.governing {
+  background: linear-gradient(180deg, #f7fcff, #edf7fb);
+}
+.governing__header {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+.governing__intro {
+  max-width: 650px;
+  margin: 0 0 9px auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.governors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.governor-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(6,42,82,.11);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(6,42,82,.075);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.governor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 23px 48px rgba(6,42,82,.13);
+}
+.governor-card__photo {
+  aspect-ratio: 4 / 4.65;
+  overflow: hidden;
+  background: linear-gradient(145deg, #d8e7ee, #edf5f8);
+}
+.governor-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transition: transform .3s ease;
+}
+.governor-card:hover .governor-card__photo img { transform: scale(1.025); }
+.governor-card__body {
+  min-height: 112px;
+  padding: 20px 21px 21px;
+  border-top: 4px solid var(--yellow);
+}
+.governor-card__body h3 {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.2;
+}
+.governor-card__body p {
+  margin: 8px 0 0;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+/* PDF affordance on the school-song poster */
+.school-song__image-wrap {
+  display: block;
+}
+.school-song__open {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 3;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(3,29,57,.88);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: .2s ease;
+}
+.school-song__image-wrap:hover .school-song__open,
+.school-song__image-wrap:focus-visible .school-song__open {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1100px) {
+  .governors-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .ridge-showcase { right: 25px; }
+}
+
+@media (max-width: 800px) {
+  .hero__identity { min-height: 520px; }
+  .ridge-showcase { inset: 20px 55px 35px; }
+  .hero-float--community { left: 12px; }
+  .hero-float--motto { right: 12px; }
+  .heritage__grid { grid-template-columns: 1fr; }
+  .heritage-card--story,
+  .heritage-card--mission,
+  .heritage-card--badge,
+  .heritage-card--campus { grid-column: auto; }
+  .governing__header { grid-template-columns: 1fr; gap: 17px; text-align: center; }
+  .governing__header .eyebrow { justify-content: center; }
+  .governing__intro { margin-inline: auto; }
+  .governors-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 560px) {
+  .hero__identity { min-height: 455px; }
+  .ridge-showcase { inset: 12px 30px 42px; border-width: 6px; border-radius: 135px 135px 28px 28px; }
+  .ridge-showcase__crest { width: 190px; padding-inline: 14px; }
+  .ridge-showcase__crest-ring { width: 92px; height: 92px; margin-top: -54px; }
+  .ridge-showcase__crest-ring img { width: 62px; }
+  .ridge-showcase__community { width: 220px; transform: translateX(-50%) scale(.84); transform-origin: center bottom; }
+  .hero-float--since { width: 82px; height: 82px; right: 2px; top: 31px; border-width: 5px; }
+  .hero-float--since strong { font-size: 20px; }
+  .hero-float--community { left: 0; bottom: 45px; min-width: 155px; padding: 12px; }
+  .hero-float--community svg { width: 29px; height: 29px; }
+  .hero-float--community strong { font-size: 13px; }
+  .hero-float--motto { width: 175px; right: 0; bottom: 0; padding: 13px 15px; }
+  .hero-float--motto > span { font-size: 15px; }
+  .heritage-card { padding: 26px; }
+  .heritage-card--badge { grid-template-columns: 1fr; text-align: center; }
+  .badge-feature { min-height: 155px; }
+  .heritage-card--campus { grid-template-columns: 1fr; text-align: center; }
+  .campus-icon { margin-inline: auto; }
+  .heritage-timeline { grid-template-columns: 1fr; }
+  .governors-grid { gap: 14px; }
+  .governor-card__body { min-height: 100px; padding: 16px; }
+  .governor-card__body h3 { font-size: 18px; }
+  .governor-card__body p { font-size: 9px; }
+}
+
+@media (max-width: 400px) {
+  .governors-grid { grid-template-columns: 1fr; }
+}
